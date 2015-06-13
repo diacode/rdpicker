@@ -1,0 +1,45 @@
+{
+  "name": "rdpicker",
+  "version": "1.0.0",
+  "description": "rdpicker",
+  "scripts": {
+    "test": "eslint lib/ spec/ && ./node_modules/karma/bin/karma start karma.conf.js",
+    "watch-test": "./node_modules/karma/bin/karma start karma.conf.js --auto-watch --no-single-run",
+    "build": "webpack -p",
+    "rename-css-bower-dependencies": "find bower_components -name '*.css' | sed -e 'p;s/.css$/.scss/' | xargs -n2 mv",
+    "dev": "webpack-dev-server --inline --hot --content-base example",
+    "postinstall": "bower install"
+  },
+  "author": "",
+  "license": "BSD",
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-component"
+  ],
+  "devDependencies": {
+    "cjsx-loader": "^2.0.1",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.9.2",
+    "css-loader": "~0.12.1",
+    "es5-shim": "~4.1.0",
+    "eslint": "^0.21.1",
+    "eslint-plugin-react": "^2.3.0",
+    "jasmine": "~2.2.1",
+    "jasmine-core": "~2.2.0",
+    "karma": "~0.12.31",
+    "karma-jasmine": "~0.3.5",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "karma-sourcemap-loader": "~0.3.4",
+    "node-libs-browser": "^0.5.2",
+    "react-onclickoutside": "^0.2.4",
+    "sass-loader": "~1.0.2",
+    "style-loader": "~0.12.2",
+    "webpack": "^1.9.10",
+    "webpack-dev-server": "^1.9.0"
+  },
+  "dependencies": {
+    "classnames": "^2.1.1",
+    "react": "^0.13.3"
+  }
+}

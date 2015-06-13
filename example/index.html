@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>rdpicker Demo</title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <link rel="stylesheet" type="text/css" href="./css/example.css">
+</head>
+<body>
+  <div id="main">
+    <h1>Rdpicker demo</h1>
+    <h3>Single</h3>
+    <div id="rdpicker_single"></div>
+    <br>
+    <br>
+    <h3>Multiple</h3>
+    <div id="rdpicker_multiple"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js"></script>
+  <script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="rdpicker.css">
+  <script src="rdpicker.js"></script>
+  <script>
+    /* jshint undef:false */
+    moment.locale('en-GB');
+    var minDate = moment();
+    var i18n = {clearDates: 'Clear dates'};
+    var a = React.render(React.createElement(Rdpicker, {selectionType: 'single', i18n: i18n}), document.getElementById('rdpicker_single'));
+    React.render(React.createElement(Rdpicker, {selectionType: 'multiple', minDate: false, i18n: i18n}), document.getElementById('rdpicker_multiple'));
+  </script>
+</body>
+</html>
