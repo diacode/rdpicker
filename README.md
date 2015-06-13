@@ -29,5 +29,4 @@ Source code is written in CoffeeScript with [coffee-react](https://github.com/js
 
 * Bower package
 * Document properties
-* Live demo
 * Tests !_!
