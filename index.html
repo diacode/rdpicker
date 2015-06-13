@@ -1,80 +1,144 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Rdpicker by diacode</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Rdpicker</h1>
-      <h2 class="project-tagline">React datepicker for desktop and mobile</h2>
-      <a href="https://github.com/diacode/rdpicker" class="btn">View on GitHub</a>
-      <a href="https://github.com/diacode/rdpicker/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/diacode/rdpicker/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<head>
+  <meta charset="UTF-8">
+  <title>Rdpicker by diacode</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen"></head>
+  <link rel="stylesheet" type="text/css" href="./stylesheets/rdpicker.css">
 
-    <section class="main-content">
-      <h1>
-<a id="rdpicker---react-date-picker" class="anchor" href="#rdpicker---react-date-picker" aria-hidden="true"><span class="octicon octicon-link"></span></a>rdpicker - React Date Picker</h1>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment-with-locales.min.js' type="text/javascript"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.min.js' type="text/javascript"></script>
+  <script src='./javascript/rdpicker.js' type="text/javascript"></script>
+<body>
+  <section class="page-header">
+    <h1 class="project-name">Rdpicker</h1>
+    <h2 class="project-tagline">React datepicker for desktop and mobile</h2>
+    <a href="https://github.com/diacode/rdpicker" class="btn">View on GitHub</a>
+    <a href="https://github.com/diacode/rdpicker/zipball/master" class="btn">Download .zip</a>
+    <a href="https://github.com/diacode/rdpicker/tarball/master" class="btn">Download .tar.gz</a>
+  </section>
 
-<p>Rdpicker is a simple and lightway React component to select dates (datepicker). It's already being used in production by <a href="https://gudog.co.uk">Gudog</a>, however it's still under heavy development.</p>
+  <section class="main-content">
+    <h1>
+      <a id="rdpicker---react-date-picker" class="anchor" href="#rdpicker---react-date-picker" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>
+      rdpicker - React Date Picker
+    </h1>
 
-<h2>
-<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+    <p>
+      Rdpicker is a simple and lightway React component to select dates (datepicker). It's already being used in production by
+      <a href="https://gudog.co.uk">Gudog</a>
+      , however it's still under heavy development.
+    </p>
 
-<ul>
-<li>Two selection modes: single and multiple (for non consecutive dates)</li>
-<li>Dialog mode for mobile devices</li>
-<li>Easy internationalization</li>
-<li>Customizable with SCSS variables.</li>
-</ul>
 
-<h2>
-<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+    <h5>Single</h5>
+    <pre>React.createElement(Rdpicker, {selectionType: 'single'})</pre>
+    <div id="rdpicker_single"></div>
+    
+    <h5>Multiple</h5>
+    <pre>React.createElement(Rdpicker, {selectionType: 'multiple'})</pre>
+    <div id="rdpicker_multiple"></div>
 
-<p>Rdpicker depends on the following packages:</p>
+    <script type="text/javascript">
+      moment.locale('en-GB');
+      React.render(React.createElement(Rdpicker, {selectionType: 'single', inputOptions: {placeholder: 'Select date'}}), document.getElementById('rdpicker_single'));
+      React.render(React.createElement(Rdpicker, {selectionType: 'multiple', inputOptions: {placeholder: 'Select dates'}}), document.getElementById('rdpicker_multiple'));
+    </script>
 
-<ul>
-<li><a href="https://facebook.github.io/react/">React.js</a></li>
-<li><a href="http://momentjs.com/">moment.js</a></li>
-</ul>
+    <hr/>
+    <h2>
+      <a id="features" class="anchor" href="#features" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>
+      Features
+    </h2>
 
-<p>Note these packages are not included in the final javascript file ('./dist/rdpicker'), you'll need to include them yourself.</p>
+    <ul>
+      <li>
+        Two selection modes: single and multiple (for non consecutive dates)
+      </li>
+      <li>Dialog mode for mobile devices</li>
+      <li>Easy internationalization</li>
+      <li>Customizable with SCSS variables.</li>
+    </ul>
 
-<h2>
-<a id="development" class="anchor" href="#development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Development</h2>
+    <h2>
+      <a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>
+      Dependencies
+    </h2>
 
-<ul>
-<li>Development server <code>npm run dev</code>.</li>
-<li>Build <code>npm run build</code>;</li>
-</ul>
+    <p>Rdpicker depends on the following packages:</p>
 
-<p>Source code is written in CoffeeScript with <a href="https://github.com/jsdf/coffee-react">coffee-react</a> and <a href="http://webpack.github.io/docs/">webpack</a>.</p>
+    <ul>
+      <li>
+        <a href="https://facebook.github.io/react/">React.js</a>
+      </li>
+      <li>
+        <a href="http://momentjs.com/">moment.js</a>
+      </li>
+    </ul>
 
-<h2>
-<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h2>
+    <p>
+      Note these packages are not included in the final javascript file ('./dist/rdpicker'), you'll need to include them yourself.
+    </p>
 
-<ul>
-<li>Bower package</li>
-<li>Document properties</li>
-<li>Live demo</li>
-<li>Tests !_!</li>
-</ul>
+    <h2>
+      <a id="development" class="anchor" href="#development" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>
+      Development
+    </h2>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/diacode/rdpicker">Rdpicker</a> is maintained by <a href="https://github.com/diacode">diacode</a>.</span>
+    <ul>
+      <li>
+        Development server
+        <code>npm run dev</code>
+        .
+      </li>
+      <li>
+        Build
+        <code>npm run build</code>
+        ;
+      </li>
+    </ul>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+    <p>
+      Source code is written in CoffeeScript with
+      <a href="https://github.com/jsdf/coffee-react">coffee-react</a>
+      and
+      <a href="http://webpack.github.io/docs/">webpack</a>
+      .
+    </p>
 
-    </section>
+    <h2>
+      <a id="todo" class="anchor" href="#todo" aria-hidden="true">
+        <span class="octicon octicon-link"></span>
+      </a>
+      TODO
+    </h2>
 
-  
-  </body>
+    <ul>
+      <li>Bower package</li>
+      <li>Document properties</li>
+      <li>Tests !_!</li>
+    </ul>
+
+    <footer class="site-footer">
+      <span class="site-footer-owner">
+        <a href="https://github.com/diacode/rdpicker">Rdpicker</a>
+        is maintained by
+        <a href="https://diacode.com/">Diacode</a>.
+      </span>
+    </footer>
+
+  </section>
+</body>
 </html>
-
