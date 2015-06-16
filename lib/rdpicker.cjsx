@@ -19,6 +19,10 @@ module.exports = React.createClass
       id: 'rdpicker_date'
     onChange: (dates) -> {}
 
+  # Resets the component to its initial state
+  reset: ->
+    @refs.dateInput.reset()
+
   # Returns the value for the text input 
   # or the hidden input (if selectionType is multiple)
   getInputValue: ->

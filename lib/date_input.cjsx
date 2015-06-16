@@ -21,6 +21,9 @@ module.exports = React.createClass
     @setState
       calendarVisible: true
 
+  reset: ->
+    @replaceState @getInitialState()
+
   componentWillMount: ->
     if @props.initDates
       dates = @props.initDates.split(',')
