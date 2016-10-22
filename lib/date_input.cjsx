@@ -114,11 +114,11 @@ module.exports = React.createClass
   _renderInput: ->
     if @props.multiple
       <div>
-        <input ref='input' type='hidden' value={@_formatedDates()} name={@props.inputOptions.name} id={@props.inputOptions.id} />
-        <input type='text' onClick={@_onClick} value={@_formatedShortDates()} placeholder={@props.inputOptions.placeholder} readOnly/>
+        <input ref='input' type='hidden' value={@_formatedDates() || ''} name={@props.inputOptions.name} id={@props.inputOptions.id} />
+        <input type='text' onClick={@_onClick} value={@_formatedShortDates() || ''} placeholder={@props.inputOptions.placeholder} readOnly/>
       </div>
     else
-      <input ref='input' type='text' onClick={@_onClick} value={@_formatedDates()} name={@props.inputOptions.name} id={@props.inputOptions.id} placeholder={@props.inputOptions.placeholder} readOnly/>
+      <input ref='input' type='text' onClick={@_onClick} value={@_formatedDates() || ''} name={@props.inputOptions.name} id={@props.inputOptions.id} placeholder={@props.inputOptions.placeholder} readOnly/>
 
 
   _renderCalendar: ->
