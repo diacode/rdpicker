@@ -9,4 +9,4 @@ describe 'Rdpicker', ->
     )
 
   it 'should render', ->
-    expect(component.getDOMNode().className).toEqual('rdpicker')
+    expect(component.className).toEqual('rdpicker')

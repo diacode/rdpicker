@@ -15,7 +15,8 @@
     <div id="rdpicker_multiple"></div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-with-addons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
   <script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
   <link rel="stylesheet" type="text/css" href="rdpicker.css">
   <script src="rdpicker.js"></script>
@@ -24,8 +25,8 @@
     moment.locale('en-GB');
     var minDate = moment();
     var i18n = {clearDates: 'Clear dates'};
-    var single = React.render(React.createElement(Rdpicker, {selectionType: 'single', i18n: i18n}), document.getElementById('rdpicker_single'));
-    var multiple = React.render(React.createElement(Rdpicker, {selectionType: 'multiple', i18n: i18n}), document.getElementById('rdpicker_multiple'));
+    var single = ReactDOM.render(React.createElement(Rdpicker, {selectionType: 'single', i18n: i18n}), document.getElementById('rdpicker_single'));
+    var multiple = ReactDOM.render(React.createElement(Rdpicker, {selectionType: 'multiple', i18n: i18n}), document.getElementById('rdpicker_multiple'));
   </script>
 </body>
 </html>

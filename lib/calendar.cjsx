@@ -1,11 +1,9 @@
 DayNames = require './day_names.cjsx'
 Day = require './day.cjsx'
+onClickOutside = require 'react-onclickoutside'
 
-module.exports = React.createClass
+module.exports = onClickOutside(React.createClass
   displayName: 'Calendar'
-  mixins: [
-    require 'react-onclickoutside'
-  ]
 
   handleClickOutside: ->
     @props.hideCalendar()
@@ -111,4 +109,4 @@ module.exports = React.createClass
       
       {@_renderFooter()}
     </div>
-
+)

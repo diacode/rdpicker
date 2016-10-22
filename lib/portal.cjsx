@@ -1,5 +1,5 @@
 CSSPropertyOperations = require 'react/lib/CSSPropertyOperations'
-shallowEqual = require 'react/lib/shallowEqual'
+shallowCompare = require 'react/lib/shallowCompare'
 
 # React portal inspired by
 # https://gist.github.com/ryanflorence/ac5174cf97dd596e949c
@@ -30,8 +30,7 @@ module.exports = React.createClass
     @closePortal()
 
   shouldComponentUpdate: (nextProps, nextState) ->
-    return !shallowEqual(@props, nextProps) ||
-           !shallowEqual(@state, nextState)
+    return shallowCompare(@, nextProps, nextState);
 
   renderPortal: (props) ->
     if !@node
@@ -41,7 +40,7 @@ module.exports = React.createClass
       if @props.style
         CSSPropertyOperations.setValueForStyles(@node, @props.style)
       document.body.appendChild(@node)
-    @portal = React.render(React.cloneElement(props.children, {closePortal: @closePortal}), @node)
+    @portal = ReactDOM.render(React.cloneElement(props.children, {closePortal: @closePortal}), @node)
   
 
   render: ->
@@ -59,7 +58,7 @@ module.exports = React.createClass
 
   closePortal: ->
     if @node
-      React.unmountComponentAtNode(@node)
+      ReactDOM.unmountComponentAtNode(@node)
       document.body.removeChild(@node)
     @portal = null
     @node = null

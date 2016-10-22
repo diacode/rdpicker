@@ -50,7 +50,7 @@ module.exports = React.createClass
           selectedDates: filteredDates
   
   getValue: ->
-    @refs.input.getDOMNode().value
+    @refs.input.value
 
   _onClick: ->
     @setState

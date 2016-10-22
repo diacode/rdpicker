@@ -15,6 +15,7 @@ module.exports = {
 
   externals: {
    'react': 'var React',
+   'react-dom': 'var ReactDOM',
    'react/addons': 'var React',
    'moment': 'var moment'
   },
