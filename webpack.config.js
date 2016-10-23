@@ -4,7 +4,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   context: path.join(__dirname),
-  entry: './lib/index.js',
+  entry: ['babel-plugin-transform-object-assign', './lib/index.js'],
 
   output: {
     path: path.join(__dirname) + '/dist',
@@ -26,7 +26,11 @@ module.exports = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
       },
-      { test: /\.cjsx$/, loaders: ["coffee", "cjsx"]},
+      {
+        test: /\.cjsx$/,
+        exclude: /(node_modules|bower_components)/,
+        loaders: ["babel?plugins=transform-object-assign", "coffee", "cjsx"],
+      },
       { test: /\.coffee$/,   loader: "coffee-loader"}
     ]
   },
